@@ -10,6 +10,8 @@
 
 import pandas as pd
 from sklearn.linear_model import LinearRegression
+import matplotlib.pyplot as plt
+
 
 # Dataset 
 data = {
@@ -36,3 +38,11 @@ model.fit(x,y)  # but poora data use ho raha hai yaha
 #predict 
 prediction = model.predict([[6]])
 print("Predicted Data is ", prediction)
+
+plt.scatter(x,y,label = "Actual Data")
+plt.plot(x,model.predict(x),color = 'red',label='Regression Line')
+plt.xlabel("Hours")
+plt.ylabel("Marks")
+plt.title("Linear Regression")
+plt.legend()
+plt.show()
